@@ -1,3 +1,5 @@
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 title: OptimistiCompound's homepage
 description: Bookmark this to keep an eye on my project updates!
+plugins:
+  - jekyll-theme-hamilton
