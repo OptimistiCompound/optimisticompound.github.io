@@ -1,5 +1,5 @@
-# theme: jekyll-theme-minimal
-title: OptimistiCompound's homepage
-description: Bookmark this to keep an eye on my project updates!
 plugins:
   - jekyll-theme-hamilton
+title: OptimistiCompound's homepage
+disqus: Disqus 
+google_analytics: ID
