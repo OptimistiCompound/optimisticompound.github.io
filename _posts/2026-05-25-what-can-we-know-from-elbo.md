@@ -82,8 +82,21 @@ $$
 
 最大化 ELBO 同时意味着：
 
-1. 最大化 reconstruction term $\mathbb{E}_{q_\phi(z\mid x)}[\log p_\theta(x\mid z)]$，让 decoder 能够重构观测 $x$。
-2. 最小化 $D_{\mathrm{KL}}(q_\phi(z\mid x)\|p(z))$，让 encoder 产生的隐变量分布接近 prior。
+1. 最大化 reconstruction term
+
+   $$
+   \mathbb{E}_{q_\phi(z\mid x)}[\log p_\theta(x\mid z)],
+   $$
+
+   让 decoder 能够重构观测 $x$。
+
+2. 最小化 KL divergence
+
+   $$
+   D_{\mathrm{KL}}\big(q_\phi(z\mid x)\|p(z)\big),
+   $$
+
+   让 encoder 产生的隐变量分布接近 prior。
 
 ---
 
