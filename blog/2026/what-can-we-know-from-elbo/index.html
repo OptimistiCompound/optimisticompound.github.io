@@ -1,0 +1,183 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 证据下界的推导和解释 What Can We Know from ELBO? | Yong Zhong </title> <meta name="author" content="Yong Zhong"> <meta name="description" content="从 importance sampling 和 Jensen's inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。"> <meta name="keywords" content="machine-learning, representation-learning, parameter-generation, diffusion-language-models, robot-learning, publications, notes"> <meta property="og:site_name" content="Yong Zhong"> <meta property="og:type" content="article"> <meta property="og:title" content="Yong Zhong | 证据下界的推导和解释 What Can We Know from ELBO?"> <meta property="og:url" content="https://optimisticompound.github.io/blog/2026/what-can-we-know-from-elbo/"> <meta property="og:description" content="从 importance sampling 和 Jensen's inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。"> <meta property="og:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="证据下界的推导和解释 What Can We Know from ELBO?"> <meta name="twitter:description" content="从 importance sampling 和 Jensen's inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。"> <meta name="twitter:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Yong Zhong"
+        },
+        "url": "https://optimisticompound.github.io/blog/2026/what-can-we-know-from-elbo/",
+        "@type": "BlogPosting",
+        "description": "从 importance sampling 和 Jensen's inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。",
+        "headline": "证据下界的推导和解释 What Can We Know from ELBO?",
+        
+        "sameAs": ["https://github.com/OptimistiCompound"],
+        
+        "name": "Yong Zhong",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 800px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A7%AD&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=b7e280e57e2bc547c94fb59c914ff711"> <link rel="canonical" href="https://optimisticompound.github.io/blog/2026/what-can-we-know-from-elbo/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yong</span> Zhong </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">证据下界的推导和解释 What Can We Know from ELBO?</h1> <p class="post-meta"> Created on May 25, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/machine-learning"> <i class="fa-solid fa-hashtag fa-sm"></i> machine-learning</a>   <a href="/blog/tag/variational-inference"> <i class="fa-solid fa-hashtag fa-sm"></i> variational-inference</a>   <a href="/blog/tag/chinese"> <i class="fa-solid fa-hashtag fa-sm"></i> chinese</a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> notes</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p>这篇笔记记录 Evidence Lower Bound（ELBO）的推导过程，以及它在 variational autoencoder（VAE）中的含义。</p> <h3 id="为什么需要-elbo">为什么需要 ELBO？</h3> <p>在 VAE 中，我们希望最大化模型对观测 $x$ 的 marginal likelihood：</p> \[p_\theta(x)=\int p_\theta(x,z)\,dz.\] <p>隐变量 $z$ 往往是连续且高维的，上述积分难以直接计算。如果能找到 $\log p_\theta(x)$ 的一个可计算下界，就可以通过最大化这个下界来近似最大化 marginal likelihood。这个下界就是 ELBO。</p> <h3 id="preliminaries">Preliminaries</h3> <ul> <li> <strong>Jensen’s inequality</strong>：当 $f$ 是凹函数时，$f(\mathbb{E}[X])\geq\mathbb{E}[f(X)]$。</li> <li> <strong>KL divergence</strong>：$D_{\mathrm{KL}}(q(z\mid x)|p(z))=\mathbb{E}_{q(z\mid x)}\left[\log\frac{q(z\mid x)}{p(z)}\right]$。</li> <li> <strong>Importance sampling</strong>：$\int f(z)P(z)\,dz=\int f(z)\frac{P(z)}{Q(z)}Q(z)\,dz$，用容易采样的 $Q$ 来改写对 $P$ 的积分。</li> </ul> <h3 id="推导-elbo">推导 ELBO</h3> <p>引入一个可以采样的 variational posterior $q_\phi(z\mid x)$，在分子分母同时乘以它：</p> \[\begin{aligned} p_\theta(x) &amp;=\int p_\theta(x,z)\,dz\\ &amp;=\int p_\theta(x,z)\frac{q_\phi(z\mid x)}{q_\phi(z\mid x)}\,dz\\ &amp;=\mathbb{E}_{z\sim q_\phi(z\mid x)} \left[\frac{p_\theta(x,z)}{q_\phi(z\mid x)}\right]. \end{aligned}\] <p>对两边取对数，并利用 $\log$ 是凹函数以及 Jensen’s inequality：</p> \[\begin{aligned} \log p_\theta(x) &amp;=\log\mathbb{E}_{z\sim q_\phi(z\mid x)} \left[\frac{p_\theta(x,z)}{q_\phi(z\mid x)}\right]\\ &amp;\geq\mathbb{E}_{z\sim q_\phi(z\mid x)} \left[\log\frac{p_\theta(x,z)}{q_\phi(z\mid x)}\right]\\ &amp;=: \mathcal{L}_{\mathrm{ELBO}}(x). \end{aligned}\] <h3 id="elbo-的两种形式">ELBO 的两种形式</h3> <p><strong>Joint-distribution 期望形式</strong></p> \[\mathcal{L}_{\mathrm{ELBO}}(x) =\mathbb{E}_{z\sim q_\phi(z\mid x)} \left[\log\frac{p_\theta(x,z)}{q_\phi(z\mid x)}\right].\] <p><strong>Reconstruction term + KL divergence</strong></p> <p>利用 $p_\theta(x,z)=p_\theta(x\mid z)p(z)$ 展开：</p> \[\begin{aligned} \mathcal{L}_{\mathrm{ELBO}}(x) &amp;=\mathbb{E}_{q_\phi(z\mid x)}[\log p_\theta(x\mid z)] -D_{\mathrm{KL}}\big(q_\phi(z\mid x)\|p(z)\big). \end{aligned}\] <h3 id="这两种形式告诉了我们什么">这两种形式告诉了我们什么？</h3> <ul> <li>$q_\phi(z\mid x)$ 是 encoder 给出的 approximate posterior。</li> <li>$p(z)$ 是与 $x$ 无关的 prior。</li> <li>$p_\theta(x\mid z)$ 是 decoder likelihood。</li> </ul> <p>最大化 ELBO 同时意味着：</p> <ol> <li>最大化 reconstruction term $\mathbb{E}<em>{q</em>\phi(z\mid x)}[\log p_\theta(x\mid z)]$，让 decoder 能够重构观测 $x$。</li> <li>最小化 $D_{\mathrm{KL}}(q_\phi(z\mid x)|p(z))$，让 encoder 产生的隐变量分布接近 prior。</li> </ol> <hr> <p><em>Migrated from the <a href="https://quilted-lift-9d9.notion.site/What-Can-We-Know-from-ELBO-36b7954e6e44806f9956ef2b01ae2b5a" rel="external nofollow noopener" target="_blank">original Notion post</a>.</em></p> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/new-home-for-my-notes/">A New Home for My Notes</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/cross-entropy-loss-and-more/">关于交叉熵损失你需要知道的事 Cross Entropy Loss and More</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/why-mle-comes-in-expectation-form/">极大似然估计的推导和期望形式 Why MLE Comes in Expectation Form?</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yong Zhong. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "Selected course projects, experiments, and learning repositories.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "Research publications in reverse chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Yong Zhong&#39;s curriculum vitae.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-a-new-home-for-my-notes",
+        
+          title: "A New Home for My Notes",
+        
+        description: "Rebuilding this site as a durable home for technical notes and projects.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/new-home-for-my-notes/";
+          
+        },
+      },{id: "post-关于交叉熵损失你需要知道的事-cross-entropy-loss-and-more",
+        
+          title: "关于交叉熵损失你需要知道的事 Cross Entropy Loss and More",
+        
+        description: "从 KL divergence 和 maximum likelihood estimation 出发，理解 cross-entropy loss 与 NLL 的关系。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/cross-entropy-loss-and-more/";
+          
+        },
+      },{id: "post-证据下界的推导和解释-what-can-we-know-from-elbo",
+        
+          title: "证据下界的推导和解释 What Can We Know from ELBO?",
+        
+        description: "从 importance sampling 和 Jensen&#39;s inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/what-can-we-know-from-elbo/";
+          
+        },
+      },{id: "post-极大似然估计的推导和期望形式-why-mle-comes-in-expectation-form",
+        
+          title: "极大似然估计的推导和期望形式 Why MLE Comes in Expectation Form?",
+        
+        description: "从独立样本的联合概率出发推导 MLE，并解释 empirical average 为什么收敛到 expectation。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/why-mle-comes-in-expectation-form/";
+          
+        },
+      },{id: "projects-nlp-llm-learning",
+          title: 'NLP / LLM Learning',
+          description: "NLP and large-language-model learning notes and reflections, maintained as an evolving knowledge base.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/01-nlp-learning/";
+            },},{id: "projects-naive-risc-v-cpu",
+          title: 'Naive RISC-V CPU',
+          description: "A Verilog CPU developed for SUSTech CS202, with support for RISC-V assembly instructions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/02-naive-cpu/";
+            },},{id: "projects-operating-systems-notes",
+          title: 'Operating Systems Notes',
+          description: "Personal review materials for the SUSTech CS334 Operating Systems (H) course.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/03-operating-systems/";
+            },},{id: "projects-opengauss-vs-postgresql",
+          title: 'openGauss vs PostgreSQL',
+          description: "A comparative database benchmark project evaluating openGauss against PostgreSQL.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/04-database-benchmark/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%31%32%33%31%30%32%32%34@%6D%61%69%6C.%73%75%73%74%65%63%68.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/OptimistiCompound", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta http-equiv="refresh" content="3; url=https://github.com/OptimistiCompound/SUSTech-CS334"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Operating Systems Notes | Yong Zhong </title> <meta name="author" content="Yong Zhong"> <meta name="description" content="Personal review materials for the SUSTech CS334 Operating Systems (H) course."> <meta name="keywords" content="computer-science, systems, nlp, llm, projects, notes"> <meta property="og:site_name" content="Yong Zhong"> <meta property="og:type" content="website"> <meta property="og:title" content="Yong Zhong | Operating Systems Notes"> <meta property="og:url" content="https://optimisticompound.github.io/projects/03-operating-systems/"> <meta property="og:description" content="Personal review materials for the SUSTech CS334 Operating Systems (H) course."> <meta property="og:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Operating Systems Notes"> <meta name="twitter:description" content="Personal review materials for the SUSTech CS334 Operating Systems (H) course."> <meta name="twitter:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <script type="application/ld+json">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta http-equiv="refresh" content="3; url=https://github.com/OptimistiCompound/SUSTech-CS334"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Operating Systems Notes | Yong Zhong </title> <meta name="author" content="Yong Zhong"> <meta name="description" content="Personal review materials for the SUSTech CS334 Operating Systems (H) course."> <meta name="keywords" content="machine-learning, representation-learning, parameter-generation, diffusion-language-models, robot-learning, publications, notes"> <meta property="og:site_name" content="Yong Zhong"> <meta property="og:type" content="website"> <meta property="og:title" content="Yong Zhong | Operating Systems Notes"> <meta property="og:url" content="https://optimisticompound.github.io/projects/03-operating-systems/"> <meta property="og:description" content="Personal review materials for the SUSTech CS334 Operating Systems (H) course."> <meta property="og:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Operating Systems Notes"> <meta name="twitter:description" content="Personal review materials for the SUSTech CS334 Operating Systems (H) course."> <meta name="twitter:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <script type="application/ld+json">
     {
         "author":
         {
@@ -21,7 +21,7 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A7%AD&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=b7e280e57e2bc547c94fb59c914ff711"> <link rel="canonical" href="https://optimisticompound.github.io/projects/03-operating-systems/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yong</span> Zhong </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Operating Systems Notes</h1> <p class="post-description">Personal review materials for the SUSTech CS334 Operating Systems (H) course.</p> </header> <article> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yong Zhong. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yong</span> Zhong </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Operating Systems Notes</h1> <p class="post-description">Personal review materials for the SUSTech CS334 Operating Systems (H) course.</p> </header> <article> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yong Zhong. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -53,6 +53,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "Research publications in reverse chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Yong Zhong&#39;s curriculum vitae.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
         },{id: "post-a-new-home-for-my-notes",
         
           title: "A New Home for My Notes",
@@ -62,6 +76,39 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2026/new-home-for-my-notes/";
+          
+        },
+      },{id: "post-关于交叉熵损失你需要知道的事-cross-entropy-loss-and-more",
+        
+          title: "关于交叉熵损失你需要知道的事 Cross Entropy Loss and More",
+        
+        description: "从 KL divergence 和 maximum likelihood estimation 出发，理解 cross-entropy loss 与 NLL 的关系。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/cross-entropy-loss-and-more/";
+          
+        },
+      },{id: "post-证据下界的推导和解释-what-can-we-know-from-elbo",
+        
+          title: "证据下界的推导和解释 What Can We Know from ELBO?",
+        
+        description: "从 importance sampling 和 Jensen&#39;s inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/what-can-we-know-from-elbo/";
+          
+        },
+      },{id: "post-极大似然估计的推导和期望形式-why-mle-comes-in-expectation-form",
+        
+          title: "极大似然估计的推导和期望形式 Why MLE Comes in Expectation Form?",
+        
+        description: "从独立样本的联合概率出发推导 MLE，并解释 empirical average 为什么收敛到 expectation。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/why-mle-comes-in-expectation-form/";
           
         },
       },{id: "projects-nlp-llm-learning",
@@ -89,7 +136,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%7A%68%6F%6E%67%31%30%32%34@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+          window.open("mailto:%31%32%33%31%30%32%32%34@%6D%61%69%6C.%73%75%73%74%65%63%68.%65%64%75.%63%6E", "_blank");
         },
       },{
         id: 'social-github',
