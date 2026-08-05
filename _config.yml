@@ -9,11 +9,11 @@ last_name: Zhong
 contact_note: >
   The best way to reach me is by email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Yong Zhong's personal site for computer science notes, projects, and experiments.
+  Yong Zhong's personal site for machine learning, representation learning, parameter generation, publications, and notes.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: computer-science, systems, nlp, llm, projects, notes
+keywords: machine-learning, representation-learning, parameter-generation, diffusion-language-models, robot-learning, publications, notes
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🧭 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -321,8 +321,8 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["systems", "nlp", "llm", "projects"] # these tags will be displayed on the front page of your blog
-display_categories: ["updates"] # these categories will be displayed on the front page of your blog
+display_tags: ["machine-learning", "nlp", "llm", "systems"] # these tags will be displayed on the front page of your blog
+display_categories: ["notes", "updates"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

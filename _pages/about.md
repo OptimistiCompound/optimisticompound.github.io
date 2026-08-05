@@ -2,16 +2,16 @@
 layout: about
 title: About
 permalink: /
-subtitle: Computer Science · Systems · NLP/LLMs
+subtitle: Machine Learning · Representation Learning · Parameter Generation
 
 profile:
   align: right
   image: profile.png
   image_circular: false
   more_info: >
-    <p>Southern University of Science and Technology</p>
+    <p>SUSTech · NUS</p>
 
-selected_papers: false
+selected_papers: true
 social: true
 
 announcements:
@@ -24,33 +24,33 @@ latest_posts:
 ---
 
 <div class="intro-copy">
-  <strong>Yong Zhong</strong> is a Computer Science undergraduate at Southern University of Science and Technology. I learn by building: from operating systems and processor design to NLP and large language models.
+  <strong>Yong Zhong</strong> is a rising senior in Computer Science at Southern University of Science and Technology (SUSTech). His research interests include machine learning, representation learning, and parameter generation.
 </div>
 
-This site is where I keep durable notes, document projects, and make technical ideas easier to revisit.
+I am currently a visiting student at the National University of Singapore, advised by [Dr. Kai Wang](https://kaiwang960112.github.io/) and [Prof. Yang You](https://www.comp.nus.edu.sg/~youy/), working at the intersection of diffusion language models, large language models, and parameter generation. Previously, I worked with [Prof. Feng Zheng](https://sustech.edu.cn/en/faculties/zhengfeng.html) on embodied AI and robotic data generation at SUSTech.
 
 ---
 
 <div class="resource-grid">
+  <a class="resource-card" href="https://radar-iros.netlify.app/">
+    <i class="fa-solid fa-robot fa-fw"></i>
+    <span>
+      <strong>RADAR at IROS 2026</strong>
+      <small>Closed-loop robotic data generation</small>
+    </span>
+  </a>
+  <a class="resource-card" href="{{ '/cv/' | relative_url }}">
+    <i class="fa-solid fa-file-lines fa-fw"></i>
+    <span>
+      <strong>Curriculum Vitae</strong>
+      <small>Education, research, projects, and awards</small>
+    </span>
+  </a>
   <a class="resource-card" href="https://github.com/OptimistiCompound/NLP-Learning">
     <i class="fa-solid fa-book-open fa-fw"></i>
     <span>
       <strong>NLP / LLM Learning</strong>
       <small>Notes and reflections, updated over time</small>
-    </span>
-  </a>
-  <a class="resource-card" href="https://github.com/OptimistiCompound/SUSTech_CS202_NaiveCPU">
-    <i class="fa-solid fa-microchip fa-fw"></i>
-    <span>
-      <strong>Naive RISC-V CPU</strong>
-      <small>A Verilog processor built for SUSTech CS202</small>
-    </span>
-  </a>
-  <a class="resource-card" href="https://quilted-lift-9d9.notion.site/Yong-Zhong-s-Blog-2997954e6e44800987f8f12a13143308">
-    <i class="fa-solid fa-box-archive fa-fw"></i>
-    <span>
-      <strong>Previous Notes</strong>
-      <small>The earlier Notion archive</small>
     </span>
   </a>
 </div>
