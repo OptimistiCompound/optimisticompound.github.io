@@ -1,0 +1,10 @@
+github_users:
+  - OptimistiCompound
+
+repo_description_lines_max: 2
+
+github_repos:
+  - OptimistiCompound/NLP-Learning
+  - OptimistiCompound/SUSTech-CS334
+  - OptimistiCompound/SUSTech_CS202_NaiveCPU
+  - OptimistiCompound/proj3_repo

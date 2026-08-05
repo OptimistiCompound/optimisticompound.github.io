@@ -1,0 +1,39 @@
+<div class="news">
+  {% assign latest_posts_size = site.posts | size %}
+  {% assign latest_posts = site.posts %}
+  {% assign latest_posts_limit = page.latest_posts.limit | default: latest_posts_size %}
+  {% if latest_posts_size > 0 %}
+    <div class="latest-post-cards">
+      {% for item in latest_posts limit: latest_posts_limit %}
+        {% if item.external_source == blank %}
+          {% assign read_time = item.content | number_of_words | divided_by: 180 | plus: 1 %}
+        {% else %}
+          {% assign read_time = item.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+        {% endif %}
+        {% if item.redirect == blank %}
+          {% assign item_url = item.url | relative_url %}
+          {% assign external = false %}
+        {% elsif item.redirect contains '://' %}
+          {% assign item_url = item.redirect %}
+          {% assign external = true %}
+        {% else %}
+          {% assign item_url = item.redirect | relative_url %}
+          {% assign external = false %}
+        {% endif %}
+        <a
+          class="latest-post-card"
+          href="{{ item_url }}"
+          {% if external %}
+            target="_blank" rel="noopener noreferrer"
+          {% endif %}
+        >
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <small>{{ read_time }} min read <span>·</span> {{ item.date | date: '%Y' }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts so far.</p>
+  {% endif %}
+</div>
