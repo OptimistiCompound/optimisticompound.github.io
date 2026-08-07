@@ -1,0 +1,198 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 为什么你应该卖烤炉鸡蛋灌饼，而不是锅包肉？ | Yong Zhong </title> <meta name="author" content="Yong Zhong"> <meta name="description" content="同样是五个步骤，为什么烤炉鸡蛋灌饼出餐更快？从一个小摊理解流水线、吞吐量与系统瓶颈。"> <meta name="keywords" content="machine-learning, representation-learning, parameter-generation, diffusion-language-models, robot-learning, publications, notes"> <meta property="og:site_name" content="Yong Zhong"> <meta property="og:type" content="article"> <meta property="og:title" content="Yong Zhong | 为什么你应该卖烤炉鸡蛋灌饼，而不是锅包肉？"> <meta property="og:url" content="https://optimisticompound.github.io/blog/2025/pipeline-jianbing-vs-guobaorou/"> <meta property="og:description" content="同样是五个步骤，为什么烤炉鸡蛋灌饼出餐更快？从一个小摊理解流水线、吞吐量与系统瓶颈。"> <meta property="og:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="为什么你应该卖烤炉鸡蛋灌饼，而不是锅包肉？"> <meta name="twitter:description" content="同样是五个步骤，为什么烤炉鸡蛋灌饼出餐更快？从一个小摊理解流水线、吞吐量与系统瓶颈。"> <meta name="twitter:image" content="https://optimisticompound.github.ioassets/img/profile.png"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Yong Zhong"
+        },
+        "url": "https://optimisticompound.github.io/blog/2025/pipeline-jianbing-vs-guobaorou/",
+        "@type": "BlogPosting",
+        "description": "同样是五个步骤，为什么烤炉鸡蛋灌饼出餐更快？从一个小摊理解流水线、吞吐量与系统瓶颈。",
+        "headline": "为什么你应该卖烤炉鸡蛋灌饼，而不是锅包肉？",
+        
+        "sameAs": ["https://github.com/OptimistiCompound"],
+        
+        "name": "Yong Zhong",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 800px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A7%AD&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=b7e280e57e2bc547c94fb59c914ff711"> <link rel="canonical" href="https://optimisticompound.github.io/blog/2025/pipeline-jianbing-vs-guobaorou/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yong</span> Zhong </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">为什么你应该卖烤炉鸡蛋灌饼，而不是锅包肉？</h1> <p class="post-meta"> Created on November 18, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/systems"> <i class="fa-solid fa-hashtag fa-sm"></i> systems</a>   <a href="/blog/tag/performance"> <i class="fa-solid fa-hashtag fa-sm"></i> performance</a>   <a href="/blog/tag/pipeline"> <i class="fa-solid fa-hashtag fa-sm"></i> pipeline</a>   <a href="/blog/tag/chinese"> <i class="fa-solid fa-hashtag fa-sm"></i> chinese</a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> notes</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <p>假设你准备摆一个只有两个人的小吃摊。菜单上有两个候选：烤炉鸡蛋灌饼和锅包肉。</p> <p>它们都需要五个步骤，看起来复杂度相当；但在相同的人手和设备下，鸡蛋灌饼通常能卖得更多。区别不在步骤数量，而在这些步骤能否并行，以及它们是否争抢同一个稀缺资源。</p> <h2 id="两种同为五步的流程">两种同为五步的流程</h2> <p>烤炉鸡蛋灌饼的流程是：</p> <ol> <li>擀面皮；</li> <li>往面皮里灌鸡蛋；</li> <li>下油锅煎；</li> <li>放进烤炉烤；</li> <li>加小料并出餐。</li> </ol> <p>两个人分工时，A 只负责不断擀面皮，B 负责其余步骤。</p> <p>锅包肉的流程同样可以拆成五步：</p> <ol> <li>调面糊；</li> <li>裹面糊后完成第一遍炸制；</li> <li>升高油温复炸；</li> <li>炒热糖醋汁并挂汁；</li> <li>装盒、加香菜并出餐。</li> </ol> <p>在这个小摊里，A 负责调面糊和装盒，B 负责两遍炸制和炒糖醋汁。</p> <p>如果只数步骤，两者都是五步；如果画出资源依赖，差别就出现了。</p> <h2 id="真正的区别是资源依赖">真正的区别是资源依赖</h2> <p>锅包肉的问题是：在只有一个灶台的情况下，第一遍炸、第二遍炸和炒汁都要占用同一个灶台，也都需要 B 操作。即使 B 手速再快，这三段关键流程仍然只能串行执行：上一道菜没有释放灶台，下一道菜就无法进入相同阶段。</p> <p>鸡蛋灌饼则不同。油锅和烤炉是两个独立的工作站。一个饼在烤炉里烘烤时，另一个饼可以在油锅里煎；设备自行加热的间隙，B 还可以处理下一张饼。只要油锅和烤炉的容量足够，且上锅、翻面和转移等短操作可以并入相邻时间片，多个订单就可以处在不同阶段。</p> <p>因此，鸡蛋灌饼天然形成了一条流水线：</p> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>时间片       1  2  3  4  5  6  7  8  9 10 11 12 13 14
+订单 1       2  3  3  3  3  4  4  4  4  5
+订单 2             2  3  3  3  3  4  4  4  4  5
+订单 3                   2  3  3  3  3  4  4  4  4  5
+</code></pre></div></div> <p>在这个简化模型中，步骤 3 和步骤 4 各持续 4 个时间片，但食物在设备中加工时不需要 B 持续操作。每个订单从步骤 2 到步骤 5 仍然要经历 10 个时间片，但相邻订单可以每隔 2 个时间片进入流水线。</p> <h2 id="不要混淆-latency-和-throughput">不要混淆 latency 和 throughput</h2> <p>这是流水线最容易被说错的地方。</p> <ul> <li> <strong>Latency</strong>：完成一个订单从开始到结束需要多久；</li> <li> <strong>Throughput</strong>：进入稳态后，单位时间能完成多少订单。</li> </ul> <p>在上面的简化模型中，单个鸡蛋灌饼的 latency 仍然是 10 个时间片。流水线没有让某一张饼瞬间成熟，而是让不同订单的等待时间互相重叠，因此稳态下每 2 个时间片就能出一个饼。</p> <p>如果从空流水线开始，完成 $N$ 个订单所需的时间是</p> \[T_{\text{pipeline}}(N)=10+2(N-1)=2N+8.\] <p>若完全串行执行，则需要</p> \[T_{\text{serial}}(N)=10N.\] <p>因此加速比为</p> \[S(N)=\frac{10N}{2N+8}.\] <p>当订单很多时，$S(N)$ 逐渐接近 5。这才是“效率提升 5 倍”的准确含义：它是稳态 throughput 的极限提升，而不是第一批订单从冷启动时立刻获得的提升。</p> <p>例如，一个时间片是 20 秒：</p> <ul> <li>单个订单的 latency 是 200 秒；</li> <li>稳态下平均每 40 秒出一个饼；</li> <li>流水线填满后，6 分钟可以连续完成 9 个饼；</li> <li>但从空流水线开始，前 9 个饼需要 26 个时间片，也就是 8 分 40 秒。</li> </ul> <p>相比之下，完全串行做 9 个饼需要 30 分钟。第一批 9 个订单的实际加速约为 $90/26\approx 3.46$ 倍；订单越多，平均效率越接近 5 倍。</p> <h2 id="卖什么其实是在选择系统结构">卖什么，其实是在选择系统结构</h2> <p>这个例子不是说锅包肉天生不能流水化。如果增加灶台、炸锅或操作人员，它同样可以获得并行度。问题在于，当资源固定为“两个人、一个灶台”时，它的关键步骤集中争抢同一个 bottleneck；鸡蛋灌饼则把工作分散到了油锅、烤炉和人工操作三个工作站。</p> <p>因此，比较两门生意时，不能只问“各有多少步骤”，还要问：</p> <ol> <li>哪个步骤占用最稀缺的资源？</li> <li>哪些等待时间可以被其他订单利用？</li> <li>相邻订单最短可以间隔多久进入流程？</li> <li>增加一个人或一台设备，是否真的能解除 bottleneck？</li> </ol> <p>步骤数量决定不了产能。真正决定单位时间出餐量的，是依赖关系、资源冲突和最慢的流水线阶段。</p> <p>所以，在这个限定条件下，你应该卖烤炉鸡蛋灌饼，而不是锅包肉。</p> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/new-home-for-my-notes/">A New Home for My Notes</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/cross-entropy-loss-and-more/">Cross-Entropy、KL、NLL 与 MLE：同一个目标的四种写法</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/what-can-we-know-from-elbo/">证据下界的推导和解释 What Can We Know from ELBO?</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/why-mle-comes-in-expectation-form/">极大似然估计的推导和期望形式 Why MLE Comes in Expectation Form?</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yong Zhong. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "Selected course projects, experiments, and learning repositories.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "Research publications in reverse chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Yong Zhong&#39;s curriculum vitae.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-a-new-home-for-my-notes",
+        
+          title: "A New Home for My Notes",
+        
+        description: "Rebuilding this site as a durable home for technical notes and projects.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/new-home-for-my-notes/";
+          
+        },
+      },{id: "post-cross-entropy-kl-nll-与-mle-同一个目标的四种写法",
+        
+          title: "Cross-Entropy、KL、NLL 与 MLE：同一个目标的四种写法",
+        
+        description: "从一个统一目标出发，推导 cross-entropy、forward KL divergence、negative log-likelihood 与 maximum likelihood estimation 的关系及成立条件。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/cross-entropy-loss-and-more/";
+          
+        },
+      },{id: "post-证据下界的推导和解释-what-can-we-know-from-elbo",
+        
+          title: "证据下界的推导和解释 What Can We Know from ELBO?",
+        
+        description: "从 importance sampling 和 Jensen&#39;s inequality 出发推导 ELBO，并解释它在 VAE 中的两种形式。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/what-can-we-know-from-elbo/";
+          
+        },
+      },{id: "post-极大似然估计的推导和期望形式-why-mle-comes-in-expectation-form",
+        
+          title: "极大似然估计的推导和期望形式 Why MLE Comes in Expectation Form?",
+        
+        description: "从独立样本的联合概率出发推导 MLE，并解释 empirical average 为什么收敛到 expectation。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/why-mle-comes-in-expectation-form/";
+          
+        },
+      },{id: "post-为什么你应该卖烤炉鸡蛋灌饼-而不是锅包肉",
+        
+          title: "为什么你应该卖烤炉鸡蛋灌饼，而不是锅包肉？",
+        
+        description: "同样是五个步骤，为什么烤炉鸡蛋灌饼出餐更快？从一个小摊理解流水线、吞吐量与系统瓶颈。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/pipeline-jianbing-vs-guobaorou/";
+          
+        },
+      },{id: "projects-nlp-llm-learning",
+          title: 'NLP / LLM Learning',
+          description: "NLP and large-language-model learning notes and reflections, maintained as an evolving knowledge base.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/01-nlp-learning/";
+            },},{id: "projects-naive-risc-v-cpu",
+          title: 'Naive RISC-V CPU',
+          description: "A Verilog CPU developed for SUSTech CS202, with support for RISC-V assembly instructions.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/02-naive-cpu/";
+            },},{id: "projects-operating-systems-notes",
+          title: 'Operating Systems Notes',
+          description: "Personal review materials for the SUSTech CS334 Operating Systems (H) course.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/03-operating-systems/";
+            },},{id: "projects-opengauss-vs-postgresql",
+          title: 'openGauss vs PostgreSQL',
+          description: "A comparative database benchmark project evaluating openGauss against PostgreSQL.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/04-database-benchmark/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%31%32%33%31%30%32%32%34@%6D%61%69%6C.%73%75%73%74%65%63%68.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/OptimistiCompound", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
