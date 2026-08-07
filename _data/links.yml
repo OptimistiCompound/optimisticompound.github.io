@@ -1,5 +1,21 @@
-- name: Shuoer
-  url: https://www.shuoer.top/
-  display_url: shuoer.top
-  avatar: /assets/img/links/shuoer.webp
-  description: 计算机专业学生，研究兴趣包括 distributed learning 与 multi-agent systems。
+- title: My Friends
+  links:
+    - name: Shuoer
+      url: https://www.shuoer.top/
+      display_url: shuoer.top
+      avatar: /assets/img/links/shuoer.webp
+      description: 计算机专业学生，研究兴趣包括 distributed learning 与 multi-agent systems。
+
+    - name: Emerson Hsieh
+      url: https://www.emersonhsieh.com/
+      display_url: emersonhsieh.com
+      avatar: /assets/img/links/emerson.webp
+      description: Berkeley CS student and YC startup founder.
+
+- title: Interesting Sites
+  links:
+    - name: 科学空间
+      url: https://spaces.ac.cn/
+      display_url: spaces.ac.cn
+      avatar_text: 科
+      description: 苏剑林的博客，分享数学、机器学习与自然语言处理等技术文章。
