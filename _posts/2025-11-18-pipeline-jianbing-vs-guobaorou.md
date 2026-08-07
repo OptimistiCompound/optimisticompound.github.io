@@ -43,14 +43,62 @@ categories: notes
 
 因此，鸡蛋灌饼天然形成了一条流水线：
 
-```text
-时间片       1  2  3  4  5  6  7  8  9 10 11 12 13 14
-订单 1       2  3  3  3  3  4  4  4  4  5
-订单 2             2  3  3  3  3  4  4  4  4  5
-订单 3                   2  3  3  3  3  4  4  4  4  5
-```
+<div class="table-responsive">
+  <table class="table table-sm text-center" style="min-width: 46rem; table-layout: fixed; border-collapse: separate; border-spacing: 0.2rem">
+    <colgroup>
+      <col style="width: 6rem">
+      <col span="14" style="width: 2.75rem">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col" style="white-space: nowrap">订单 / 时间</th>
+        <th scope="col">1</th>
+        <th scope="col">2</th>
+        <th scope="col">3</th>
+        <th scope="col">4</th>
+        <th scope="col">5</th>
+        <th scope="col">6</th>
+        <th scope="col">7</th>
+        <th scope="col">8</th>
+        <th scope="col">9</th>
+        <th scope="col">10</th>
+        <th scope="col">11</th>
+        <th scope="col">12</th>
+        <th scope="col">13</th>
+        <th scope="col">14</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" style="background: var(--global-bg-color)">订单 1</th>
+        <td style="background: color-mix(in srgb, #c026d3 18%, transparent); border-radius: 0.25rem"><strong>灌蛋</strong></td>
+        <td colspan="4" style="background: color-mix(in srgb, #2563eb 18%, transparent); border-radius: 0.25rem"><strong>油锅</strong></td>
+        <td colspan="4" style="background: color-mix(in srgb, #f59e0b 22%, transparent); border-radius: 0.25rem"><strong>烤炉</strong></td>
+        <td style="background: color-mix(in srgb, #16a34a 20%, transparent); border-radius: 0.25rem"><strong>出餐</strong></td>
+        <td colspan="4" style="background: var(--global-bg-color)"></td>
+      </tr>
+      <tr>
+        <th scope="row" style="background: var(--global-bg-color)">订单 2</th>
+        <td colspan="2" style="background: var(--global-bg-color)"></td>
+        <td style="background: color-mix(in srgb, #c026d3 18%, transparent); border-radius: 0.25rem"><strong>灌蛋</strong></td>
+        <td colspan="4" style="background: color-mix(in srgb, #2563eb 18%, transparent); border-radius: 0.25rem"><strong>油锅</strong></td>
+        <td colspan="4" style="background: color-mix(in srgb, #f59e0b 22%, transparent); border-radius: 0.25rem"><strong>烤炉</strong></td>
+        <td style="background: color-mix(in srgb, #16a34a 20%, transparent); border-radius: 0.25rem"><strong>出餐</strong></td>
+        <td colspan="2" style="background: var(--global-bg-color)"></td>
+      </tr>
+      <tr>
+        <th scope="row" style="background: var(--global-bg-color)">订单 3</th>
+        <td colspan="4" style="background: var(--global-bg-color)"></td>
+        <td style="background: color-mix(in srgb, #c026d3 18%, transparent); border-radius: 0.25rem"><strong>灌蛋</strong></td>
+        <td colspan="4" style="background: color-mix(in srgb, #2563eb 18%, transparent); border-radius: 0.25rem"><strong>油锅</strong></td>
+        <td colspan="4" style="background: color-mix(in srgb, #f59e0b 22%, transparent); border-radius: 0.25rem"><strong>烤炉</strong></td>
+        <td style="background: color-mix(in srgb, #16a34a 20%, transparent); border-radius: 0.25rem"><strong>出餐</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-在这个简化模型中，步骤 3 和步骤 4 各持续 4 个时间片，但食物在设备中加工时不需要 B 持续操作。每个订单从步骤 2 到步骤 5 仍然要经历 10 个时间片，但相邻订单可以每隔 2 个时间片进入流水线。
+每个有色块代表一个 processing stage，空白表示订单尚未进入或已经离开流水线。可以看到，三个订单都要经历 1 个时间片的灌蛋、4 个时间片的油锅、4 个时间片的烤炉和 1 个时间片的出餐，总 latency 仍然是 10 个时间片；但后一行相对前一行只向右移动 2 列，因此相邻订单可以每隔 2 个时间片进入流水线。
 
 ## 不要混淆 latency 和 throughput
 
