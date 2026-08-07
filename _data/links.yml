@@ -12,6 +12,18 @@
       avatar: /assets/img/links/emerson.webp
       description: Berkeley CS student and YC startup founder.
 
+    - name: Jaredan
+      url: https://jaredan.site/
+      display_url: jaredan.site
+      avatar: /assets/img/links/jaredan.webp
+      description: Yicheng Xiao 的个人博客：不要温和地走进那个良夜。
+
+    - name: Haibin
+      url: https://www.haibinlaiblog.top/
+      display_url: haibinlaiblog.top
+      avatar: /assets/img/links/haibin.webp
+      description: SUSTech，记录 computer science、systems 与阅读思考。
+
 - title: Interesting Sites
   links:
     - name: 科学空间
