@@ -6,7 +6,7 @@ subtitle: Machine Learning · Representation Learning · Parameter Generation
 
 profile:
   align: right
-  image: profile.png
+  image: profile-mountain.jpg
   image_circular: false
   more_info: >
     <p>SUSTech · NUS</p>
