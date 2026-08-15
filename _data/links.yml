@@ -31,3 +31,15 @@
       display_url: spaces.ac.cn
       avatar_text: 科
       description: 苏剑林的博客，分享数学、机器学习与自然语言处理等技术文章。
+
+    - name: Yuxin Wu
+      url: https://ppwwyyxx.com/
+      display_url: ppwwyyxx.com
+      avatar: /assets/img/links/yuxin-wu.webp
+      description: Moonshot AI，分享 foundation models、deep learning infrastructure 与 computer vision。
+
+    - name: Vincent Sitzmann
+      url: https://www.vincentsitzmann.com/
+      display_url: vincentsitzmann.com
+      avatar: /assets/img/links/vincent-sitzmann.webp
+      description: MIT EECS Associate Professor，研究 scene representations、generative models 与 robotics。
