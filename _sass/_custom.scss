@@ -82,6 +82,38 @@
   }
 }
 
+.fun-facts {
+  max-width: 46rem;
+  margin: 2.25rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+  color: var(--global-text-color-light);
+  opacity: 0.68;
+  text-align: left;
+
+  &__title {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0.25rem 0;
+    color: inherit;
+    font-size: 0.76rem;
+    line-height: 1.55;
+  }
+
+  &__label {
+    color: inherit;
+    font-weight: 600;
+  }
+}
+
 .latest-post-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
