@@ -7,7 +7,12 @@ first_name: Yong
 middle_name:
 last_name: Zhong
 contact_note: >
-  The best way to reach me is by email.
+  <div>The best way to reach me is by email.</div>
+  <aside class="fun-facts" aria-label="Fun facts">
+    <span class="fun-facts__title">Fun facts</span>
+    <p><span class="fun-facts__label">Things I like:</span> skiing, gym, Radiohead, The Strokes, Khalil Fong, anime, existentialism, Socrates, things that are intuitive, things that are counter-intuitive, paradigm shift, Linux, low-rank, latent, residual, delta rule, AdaLN-Zero, scalability.</p>
+    <p><span class="fun-facts__label">Things I dislike:</span> scalability, MINE, TikTok, Neural Architecture Search, hand-wash-only.</p>
+  </aside>
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Yong Zhong's personal site for machine learning, representation learning, parameter generation, publications, and notes.
 footer_text: >
