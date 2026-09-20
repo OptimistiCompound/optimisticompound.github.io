@@ -12,3 +12,7 @@ nav_order: 4
 <object data="{{ '/assets/pdf/Yong_Zhong_Academic_CV.pdf' | relative_url }}" type="application/pdf" width="100%" height="960" aria-label="Yong Zhong's academic curriculum vitae">
   <p>Your browser cannot display the embedded PDF. <a href="{{ '/assets/pdf/Yong_Zhong_Academic_CV.pdf' | relative_url }}">Download the Academic CV</a> instead.</p>
 </object>
+
+## Research Statement
+
+<a href="{{ '/assets/pdf/Zhong_Research_Interests_HuaWei_final.pdf' | relative_url }}" download>Download Research Statement as PDF</a>
