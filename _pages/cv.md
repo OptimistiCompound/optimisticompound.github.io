@@ -15,4 +15,4 @@ nav_order: 4
 
 ## Research Statement
 
-<a href="{{ '/assets/pdf/Zhong_Research_Interests_HuaWei_final.pdf' | relative_url }}" download>Download Research Statement as PDF</a>
+<a href="{{ '/assets/pdf/ZhongYong_Research_Statement.pdf' | relative_url }}" download>Download Research Statement as PDF</a>
